@@ -36,8 +36,8 @@ def detect_emotion_route():
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'abhay369kumar@gmail.com'
-app.config['MAIL_PASSWORD'] = 'ohcn drbz bzve qbjt'
+app.config['MAIL_USERNAME'] = <Your Email>
+app.config['MAIL_PASSWORD'] = <Your Gmail Virtual App Password>
 
 mail = Mail(app)
 
@@ -52,7 +52,7 @@ def send_message():
         return jsonify({'error': 'Email & Message are required'}), 400
 
     try:
-        msg = Message(subject="New Message from MoodFork", sender=user_email, recipients=['abhay369kumar@gmail.com'], body=f"Message from {user_email}:\n\n{message_content}")
+        msg = Message(subject="New Message from MoodFork", sender=user_email, recipients=[<Your Email>], body=f"Message from {user_email}:\n\n{message_content}")
 
         mail.send(msg)
         return jsonify({'success': 'Message sent successfully!'}), 200
